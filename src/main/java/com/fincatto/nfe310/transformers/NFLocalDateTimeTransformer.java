@@ -7,15 +7,28 @@ import org.simpleframework.xml.transform.Transform;
 
 class NFLocalDateTimeTransformer implements Transform<LocalDateTime> {
 
-    private static final SimpleDateFormat DATETIME_FORMATTER = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+	private static final SimpleDateFormat DATETIME_FORMATTER = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
 
-    @Override
-    public LocalDateTime read(final String data) throws Exception {
-        return LocalDateTime.fromDateFields(NFLocalDateTimeTransformer.DATETIME_FORMATTER.parse(data));
-    }
+	String[] formatStrings = { "yyyy-MM-dd'T'HH:mm:ssXXX", "yyyy-MM-dd'T'HH:mm:ss" };
 
-    @Override
-    public String write(final LocalDateTime data) throws Exception {
-        return NFLocalDateTimeTransformer.DATETIME_FORMATTER.format(data.toDate());
-    }
+	@Override
+	public LocalDateTime read(final String data) throws Exception {
+
+		for (String formatString : formatStrings) {
+			try {
+				return LocalDateTime.fromDateFields(new SimpleDateFormat(formatString).parse(data));
+			} catch (Exception e) {
+			}
+		}
+
+		return null;
+
+		// return
+		// LocalDateTime.fromDateFields(NFLocalDateTimeTransformer.DATETIME_FORMATTER.parse(data));
+	}
+
+	@Override
+	public String write(final LocalDateTime data) throws Exception {
+		return NFLocalDateTimeTransformer.DATETIME_FORMATTER.format(data.toDate());
+	}
 }
