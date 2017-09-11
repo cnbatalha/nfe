@@ -1,8 +1,8 @@
 package com.fincatto.nfe310.classes;
 
-import java.util.Arrays;
-
 import com.fincatto.nfe310.parsers.NotaFiscalChaveParser;
+
+import java.util.Arrays;
 
 /**
  * <h1>URLs dos serviços</h1><br>
@@ -1625,6 +1625,8 @@ public enum NFAutorizador31 {
 
     public static NFAutorizador31 valueOfTipoEmissao(final NFTipoEmissao tpEmissao, final NFUnidadeFederativa uf) {
         switch (tpEmissao) {
+        	case CONTIGENCIA_OFFLINE:
+        	case CONTINGENCIA_FSDA:
             case EMISSAO_NORMAL:
                 return NFAutorizador31.valueOfCodigoUF(uf);
             case CONTINGENCIA_SVCRS:
