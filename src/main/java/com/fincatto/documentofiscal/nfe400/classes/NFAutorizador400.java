@@ -71,22 +71,22 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaProtocolo(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeConsulta2";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeConsulta4";
         }
 
         @Override
         public String getNfceStatusServico(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services-nac/services/NfeStatusServico2" : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeStatusServico2";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services-nac/services/NfeStatusServico4" : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeStatusServico4";
         }
 
         @Override
         public String getNfceRecepcaoEvento(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services/services/RecepcaoEvento" : "https://nfce.sefaz.am.gov.br/nfce-services/services/RecepcaoEvento";
-        }
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services/services/RecepcaoEvento4" : "https://nfce.sefaz.am.gov.br/nfce-services/services/RecepcaoEvento4";
+        }																															
 
         @Override
         public String getNfceInutilizacao(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services-nac/services/NfeInutilizacao2" : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeInutilizacao2";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfce.sefaz.am.gov.br/nfce-services-nac/services/NfeInutilizacao4" : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeInutilizacao4";
         }
 
         @Override
